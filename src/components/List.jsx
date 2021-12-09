@@ -1,11 +1,11 @@
 import React, {useState, useEffect, useRef} from 'react'
-import {Button, IconButton, Input, Paper, Typography, Collapse} from '@material-ui/core';
+import {Button, IconButton, Input, Paper, Collapse} from '@material-ui/core';
 import Close from '@material-ui/icons/Close';
-import {DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd';
+import {Droppable, Draggable} from 'react-beautiful-dnd';
 import Card from './Card';
 import {v4 as uuid} from 'uuid';
-import Delete from '@material-ui/icons/Delete';
-import axios from 'axios';
+// import Delete from '@material-ui/icons/Delete';
+// import axios from 'axios';
 function List({id, list, lists, setLists, render, setRender}) {
     const [newTitle, setNewTitle] = useState(list.name);
     const [isOpen, setOpen] = useState(false);

@@ -1,48 +1,25 @@
 import React, {useState, useEffect} from 'react'
 import '../styles/List.css';
-import {DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd';
-import {v4 as uuid} from 'uuid';
+import {DragDropContext} from 'react-beautiful-dnd';
 import List from './List';
 import AddNewList from './AddNewList';
 import {Button} from 'react-bootstrap';
 import axios from 'axios';
 import {Navigate} from 'react-router-dom';
-import { NotificationContainer, NotificationManager } from 'react-notifications';
+import {NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 
-// these will be fetched from the backend 
-var arr= [
-    {
-        cardContent: "Make a draggable todo list",
-        id: uuid().toString(),
-    },
-    {
-        cardContent: "Walk dog",
-        id: uuid().toString(),
-    },
-
-
-];
-const listsFromBackend = {
-    [uuid()]:{
-        name: 'Todo',
-        items: arr
-    },
-    [uuid()]:{
-        name: 'Done',
-        items: []
-    },
-}
 function Lists( {hasLoggedIn} ) {
     const [lists, setLists] = useState({});
     const [render, setRender] = useState(false);
 
     const params = window.location.pathname.split('/');
+    const boardId = params[2];
     useEffect(() => {
-        axios.get(`https://kanban-backend-server.herokuapp.com/lists/${params[2]}`).then(res => {
+        axios.get(`https://kanban-backend-server.herokuapp.com/lists/${boardId}`).then(res => {
             setLists(res.data.data);
         });
-    }, [])
+    }, [boardId])
     const handleBoardSave = ()=>{
         axios.post(`https://kanban-backend-server.herokuapp.com/updatelists/${params[2]}`, lists).then(res => {
             console.log(res.data);

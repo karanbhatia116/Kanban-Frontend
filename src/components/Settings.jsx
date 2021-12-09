@@ -2,7 +2,7 @@ import { Avatar, InputLabel, OutlinedInput, TextField } from '@material-ui/core'
 import { Button } from 'react-bootstrap';
 import React, { useState} from 'react'
 import { InputAdornment, IconButton, FormControl, FormHelperText} from '@material-ui/core';
-import { NotificationContainer, NotificationManager } from 'react-notifications';
+import { NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 import '../styles/Settings.css';
 import { Visibility, VisibilityOff } from '@material-ui/icons';
@@ -20,7 +20,7 @@ const useStyles = makeStyles({
 const Settings = () => {
     const classes = useStyles();
     const user = JSON.parse(localStorage.getItem('user')); 
-    const [userName, setUserName] = useState(user? user.username : "");
+    const userName = user? user.username : "";
     const [email, setEmail] = useState(user ? user.email : "");
     const [title, setTitle] = useState(user ? user.title : '');
     const [bio, setBio] = useState(user ? user.bio : "");
@@ -78,7 +78,7 @@ const Settings = () => {
         });
     }
     function ValidateEmail(mail) {
-        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        var reg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (reg.test(mail)) {
             return (true)
         }
