@@ -1,0 +1,26 @@
+.login__container{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 5%;
+    padding: 2%;
+}
+
+.links{
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+
+}
+.forgot__password {
+    font-size: 0.8em;
+    text-decoration: none;
+    color: rgb(129, 122, 122);
+    margin: 1em 1em;
+    /* margin-right: 2em; */
+}
+.forgot__password:hover {
+    color: rgb(193, 58, 211);
+    text-decoration: underline;
+}

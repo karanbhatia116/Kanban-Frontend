@@ -1,0 +1,78 @@
+.main__container{
+    display: flex;
+    min-width: 86%;
+    margin-top: 3.4rem;
+    margin-bottom: auto;
+    overflow-x: auto;
+    height: 100%;
+    align-items: center;
+    margin-left: 2.5%;
+
+}
+.list__container{
+    margin-top: 0%;
+    margin-left: 1.5%;
+    margin-right: 0.5%;
+    min-width: 300px;
+    max-width: 320px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.list__header{
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.list__title{
+    justify-content: center;
+    font-size: larger;
+    font-weight: bold;
+}
+.list{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 400px;
+    overflow: scroll;
+}
+.list__dragging__over{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 400px;
+    overflow: scroll;
+    background-color: lightblue;
+}
+.dummy__container{
+    width:100%;
+}
+.dummy__container__dragging{
+    width: 100%;
+    background-color: lightgreen;
+}
+.list__add{
+    display: flex;
+    justify-content: space-between;
+}
+
+.save__button{
+
+    margin-top: 1rem;
+    padding : 1em;
+    background-color: #589b57;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    box-shadow: 0 5px 3px #999;
+}
+.save__button:hover{
+    transition: background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    background-color: #63c262;
+    cursor: pointer;
+}
+.save__button:active{
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    cursor: pointer;
+}
